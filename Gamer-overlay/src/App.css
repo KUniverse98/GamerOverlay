@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+.gamer-card {
+  @apply bg-gray-900 text-white p-6 rounded-2xl shadow-xl w-full max-w-sm mx-auto mt-10 text-center;
+}
+
+.username {
+  @apply text-2xl font-bold mb-4;
+}
+
+.xp-bar {
+  @apply relative bg-gray-800 h-6 rounded-full mb-4 overflow-visible;
+}
+
+.xp-fill {
+  @apply bg-green-500 h-full transition-all duration-300 rounded-full;
+}
+
+.particle {
+  @apply absolute w-3 h-3 bg-green-400 rounded-full opacity-80;
+  animation: pop 0.5s ease-out forwards;
+  pointer-events: none;
+  z-index: 10;
+}
+
+
+
+@keyframes pop {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.4;
+  }
+}
+
+.level-display {
+  @apply text-xl font-semibold mb-2;
+}
+
+.avatar-container {
+  @apply flex justify-center mb-4;
+}
+
+.avatar {
+  @apply rounded-full border-4 border-green-500 shadow-lg;
+}
+
+.xp-button {
+  @apply bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded-lg w-full font-bold;
+}
+
+.levelup-overaly {
+  @apply fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.level-popup {
+  @apply bg-gray-900 px-8 py-6 rounded-2xl shadow-2xl text-center border-4 border-green-500;
+  animation: popupScale 0.4s ease-in-out;
+}
+
+.popup-alert {
+  @apply text-red-500 text-2xl font-extrabold mb-2;
+}
+
+.popup-success {
+  @apply text-green-400 text-lg font-bold;
+}
+
+@keyframes popupScale {
+  0%{
+    transform: scale(0.8);
+    opacity:0;
+  }
+  100%{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity:1;
+  }
+}
